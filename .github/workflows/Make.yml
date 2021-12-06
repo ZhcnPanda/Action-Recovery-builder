@@ -18,19 +18,19 @@ on:
       DEVICE_URL:
         description: 'DEVICE_URL'
         required: true
-        default: 'https://github.com/Xpsoted/android_device_qualcomm_qrd855-TWRP'
+        default: 'https://github.com/ZhcnPanda/twrp_device_xiaomi_cezanne'
       DEVICE_BRANCH:
         description: 'DEVICE_BRANCH'
         required: true
-        default: 'android-10'
+        default: 'twrp-11'
       DEVICE_PATH:
         description: 'DEVICE_PATH'
         required: true
-        default: 'device/qualcomm/msmnile'
+        default: 'device/xiaomi/cezanne'
       DEVICE_NAME:
         description: 'DEVICE_NAME'
         required: true
-        default: 'msmnile'
+        default: 'cezanne'
 
 jobs:
   build:
@@ -93,7 +93,7 @@ jobs:
         cd ${{ steps.pwd.outputs.pwd }}
         export ALLOW_MISSING_DEPENDENCIES=true
         source build/envsetup.sh
-        lunch ${{ github.event.inputs.LIBRARY_TYPE }}${{ github.event.inputs.DEVICE_NAME }}-eng
+        lunch ${{ github.event.inputs.LIBRARY_TYPE }}${{ github.event.inputs.DEVICE_NAME }}-userdebug
         make clean
         make recoveryimage -j$(nproc --all)
 
