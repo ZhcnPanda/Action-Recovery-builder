@@ -14,7 +14,7 @@ on:
       LIBRARY_TYPE:
         description: 'LIBRARY_TYPE'
         required: false
-        default: 'omni_'
+        default: 'twrp_'
       DEVICE_URL:
         description: 'DEVICE_URL'
         required: true
